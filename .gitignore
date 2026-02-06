@@ -167,5 +167,4 @@ logs
 # Apple
 .DS_Store
 credentials.yml
-endpoints.yml
 .vscode
