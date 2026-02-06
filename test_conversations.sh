@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Test conversations for Hive Upgrade bot demo
+# Test conversations for smart thermostat skill demo
 # These mirror the scenarios we show in the video
 
 URL="http://localhost:5005/webhooks/rest/webhook"

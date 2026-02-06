@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "hive-upskill"
+name = "smart-thermostat-skill"
 version = "0.1.0"
-description = "Upgrade the Hive AI Assistant"
+description = "A demo Rasa skill for checking thermostat status"
 requires-python = ">=3.10,<3.12"
 dependencies = [
     "rasa-pro[monitoring]",

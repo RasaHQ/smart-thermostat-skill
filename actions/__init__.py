@@ -1,4 +1,4 @@
-"""Custom actions for the Hive Upgrade bot."""
+"""Custom actions for the smart thermostat skill."""
 
 from actions.action_check_heating_system import ActionCheckHeatingSystem
 

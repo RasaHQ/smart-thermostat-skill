@@ -75,7 +75,7 @@ class ActionCheckHeatingSystem(Action):
     async def _fetch_thermostat_status(self, user_id: str) -> Dict[Text, Any] | None:
         """Fetch thermostat status from the API.
 
-        In production, this would be a real HTTP call to the Hive API.
+        In production, this would be a real HTTP call to your thermostat API.
         For the demo, we return mock data.
         """
         if user_id not in MOCK_THERMOSTAT_DATA:

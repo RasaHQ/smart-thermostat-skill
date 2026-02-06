@@ -1,0 +1,14 @@
+Q: Why is my thermostat showing offline?
+A: This usually means the thermostat has lost connection to your home network. Check that your Wi-Fi is working and try power cycling the thermostat by removing it from the wall for 30 seconds.
+
+Q: What temperature should I set my heating to?
+A: Most people find 18-21°C comfortable. Setting it lower when you're asleep or away can save energy. Every degree lower saves roughly 3% on heating costs.
+
+Q: Why is my house cold even though the heating is on?
+A: Check that your radiators aren't blocked by furniture, that radiator valves are open, and that there's no air trapped in the system (you may need to bleed the radiators).
+
+Q: How often should I service my heating system?
+A: Annual servicing is recommended to keep your boiler running efficiently and safely. This also helps catch small problems before they become expensive repairs.
+
+Q: Why does my heating turn off before reaching the target temperature?
+A: Smart thermostats often use "optimum start" to reach your target by a specific time while minimizing energy use. The system may also be accounting for residual heat.
