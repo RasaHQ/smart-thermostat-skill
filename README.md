@@ -2,7 +2,7 @@
 
 A demo Rasa skill for checking thermostat status.
 
-[![Launch on Hello Rasa](https://hello.rasa.io/launch.svg)](https://hello.rasa.io/go?repo=rasahq/smart-thermostat-skill)
+[![Launch on Hello Rasa](https://pr492.hello.rasa-dev.io/launch.svg)](https://pr492.hello.rasa-dev.io/go?repo=rasahq/smart-thermostat-skill)
 
 ## Quick Start
 
