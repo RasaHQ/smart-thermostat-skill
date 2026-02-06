@@ -1,0 +1,27 @@
+flows:
+  check_heating_system:
+    name: "check heating system"
+    description: Check the status of the user's heating system, thermostat, or boiler. Use this when the user reports heating problems, wants to know if their heating is working, or asks about their thermostat status. Note that you can ONLY read status, and cannot make any changes to the heating system.
+    steps:
+      - action: utter_checking_heating
+      - action: action_check_heating_system
+        next:
+          - if: slots.api_error
+            then:
+              - action: utter_api_error
+                next: END
+          - if: not slots.thermostat_online
+            then:
+              - action: utter_thermostat_offline
+                next: END
+          - if: slots.heating_active
+            then:
+              - action: utter_heating_on
+                next: END
+          - else:
+              - action: utter_heating_off
+                next: END
+  unsupported_heating_actions:
+    description: "respond to requests for smart home actions that aren't yet implemented in the assistant, like changing the temperature, turning lights on and off, etc. The assistant can only READ the status of the heating system."
+    steps:
+      - action: utter_unsupported_action

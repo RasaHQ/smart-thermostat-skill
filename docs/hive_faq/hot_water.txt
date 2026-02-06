@@ -1,0 +1,26 @@
+Q: Can I control my hot water with Hive?
+A: Yes, if you have a Hive system with hot water control (dual channel receiver), you can turn hot water on or off, set schedules, and boost it on demand through the app.
+
+Q: Does hot water control work with combi boilers?
+A: No, hot water features are not available with combi boilers as they heat water on demand and don't have a separate hot water tank.
+
+Q: How do I boost my hot water?
+A: In the app, tap on Hot Water and select Boost. You can set it to run for anywhere from 5 minutes to 6 hours. When the boost ends, it returns to your normal schedule.
+
+Q: Can I control the hot water temperature with Hive?
+A: No, Hive controls when your hot water heats (on/off and scheduling) but not the temperature. The temperature is set directly on your hot water cylinder's thermostat, which should be kept at 60-65°C to prevent bacteria growth.
+
+Q: How long does it take for hot water to heat up after I boost it?
+A: This depends on your cylinder size and boiler, but typically 30-45 minutes to fully heat a standard hot water cylinder.
+
+Q: Can I set different hot water schedules for different days?
+A: Yes, just like heating, you can create custom hot water schedules for each day of the week to match your household's routine.
+
+Q: My hot water isn't heating up, is this a Hive problem?
+A: First check if hot water shows as "on" in the app. If it does but you still have no hot water, the issue is likely with your boiler, cylinder, or cylinder thermostat rather than Hive.
+
+Q: Can I control hot water when I'm away from home?
+A: Yes, you can adjust hot water schedules remotely via the app. If you're going on holiday, you can turn it off to save energy, or adjust the schedule so hot water is ready when you return.
+
+Q: What's the difference between the heating and hot water receivers?
+A: The single channel receiver controls heating only. The dual channel receiver controls both heating and hot water separately, giving you independent schedules for each.

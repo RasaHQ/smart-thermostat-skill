@@ -1,0 +1,19 @@
+responses:
+  utter_greeting:
+    - text: "Hi there! I'm your Hive assistant. I can help you check your heating status and answer questions about your Hive devices."
+
+  utter_what_can_you_do:
+    - text: "I can check your heating system status and answer questions about Hive devices. Want me to check your heating?"
+
+  utter_who_are_you:
+    - text: "I'm the Hive assistant. I can check on your heating system and answer questions about your smart home devices."
+
+  utter_goodbye:
+    - text: "Goodbye! Stay warm."
+    - text: "Bye! Feel free to come back if you have questions."
+
+  utter_insult_response:
+    - text: "I'm sorry you feel that way. I'm here to help with your heating if you need it."
+
+  utter_help:
+    - text: "I can check your heating system status and answer questions about Hive devices. What do you need?"

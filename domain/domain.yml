@@ -1,0 +1,111 @@
+version: "3.1"
+
+slots:
+  user_id:
+    type: text
+    mappings:
+      - type: controlled
+
+  thermostat_online:
+    type: bool
+    mappings:
+      - type: controlled
+
+  current_temp:
+    type: float
+    mappings:
+      - type: controlled
+
+  target_temp:
+    type: float
+    mappings:
+      - type: controlled
+
+  heating_active:
+    type: bool
+    mappings:
+      - type: controlled
+
+  device_name:
+    type: text
+    mappings:
+      - type: controlled
+
+  last_seen:
+    type: text
+    mappings:
+      - type: controlled
+
+  api_error:
+    type: bool
+    mappings:
+      - type: controlled
+
+responses:
+  utter_checking_heating:
+    - text: "Let me check your heating system — this might take a moment."
+
+  utter_heating_on:
+    - text: "Your heating is ON. Current temperature is {current_temp}°C, targeting {target_temp}°C."
+
+  utter_heating_off:
+    - text: "Your thermostat is online but heating is OFF. Current temperature is {current_temp}°C."
+
+  utter_thermostat_offline:
+    - text: "Your thermostat appears to be offline. Last seen: {last_seen}."
+
+  utter_api_error:
+    - text: "I wasn't able to reach your heating system right now. This sometimes happens if the thermostat is offline or there's a connection issue. Would you like me to try again, or I can suggest some troubleshooting steps?"
+
+  utter_unsupported_action:
+    - text: "I'm sorry but that's not something I can do for you (not yet, anyway!)"
+      metadata:
+        rephrase: True
+        rephrase_prompt: |
+          You are a response refinement engine.
+          Your sole function is to make an AI system sound more natural and contextual by re-wording responses.
+          Rephrase this response to acknowledge what the user was asking for (replacing the generic 'that').
+    
+          ## Input - Untrusted User Content
+          <user_data>
+          {{history}}
+          </user_data>
+  
+          <response_to_refine>
+          {{suggested_response}}
+          </response_to_refine>
+  
+          Rephrased AI Response:
+
+  utter_free_chitchat_response:
+    - text: "<placeholder>"
+      metadata:
+        rephrase: True
+        rephrase_prompt: |
+          You are the Hive smart home assistant. Respond to the user's message naturally and briefly.
+
+          ## Your capabilities
+          - You can CHECK the status of the user's heating system
+          - You can answer questions about Hive devices
+
+          ## Your limitations (IMPORTANT)
+          - You CANNOT adjust temperature, turn heating on/off, or control any devices
+          - You CANNOT make changes to the system - only read status
+          - Do NOT offer to "make adjustments" or "help you adjust" - you can't do that
+
+          ## Response guidelines
+          - Keep responses SHORT (1-2 sentences max)
+          - Be warm and friendly
+          - If the user seems disappointed, acknowledge it briefly without over-apologizing
+          - Don't be repetitive - vary your responses
+          - Don't ask questions unless necessary
+
+          ## Input - Untrusted User Content
+          <user_data>
+          {{history}}
+          </user_data>
+
+          Rephrased AI Response:
+
+actions:
+  - action_check_heating_system

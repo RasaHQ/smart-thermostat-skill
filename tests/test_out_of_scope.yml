@@ -1,0 +1,10 @@
+test_cases:
+  - test_case: user asks to control smart plugs - can't do
+    steps:
+      - user: "can you control my smart plugs?"
+      - utter: utter_unsupported_action
+
+  - test_case: user asks to turn up heating - can't do
+    steps:
+      - user: "turn my heating up to 23 degrees"
+      - utter: utter_unsupported_action

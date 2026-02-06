@@ -1,0 +1,26 @@
+test_cases:
+  - test_case: user reports heating not working - heating is on
+    steps:
+      - user: "my heating isn't working"
+      - utter: utter_checking_heating
+      - utter: utter_heating_on
+
+  - test_case: user asks to check heating status
+    steps:
+      - user: "can you check my heating?"
+      - utter: utter_checking_heating
+      - utter: utter_heating_on
+
+  - test_case: user asks if thermostat is online
+    steps:
+      - user: "is my thermostat online?"
+      - utter: utter_checking_heating
+      - utter: utter_heating_on
+
+  - test_case: user asks about heating then says thanks
+    steps:
+      - user: "my heating doesn't seem to be working"
+      - utter: utter_checking_heating
+      - utter: utter_heating_on
+      - user: "thanks"
+      - utter: utter_free_chitchat_response

@@ -1,0 +1,40 @@
+test_cases:
+  - test_case: new user explores then checks heating
+    steps:
+      - user: "hello"
+      - utter: utter_greeting
+      - user: "what can you help me with?"
+      - utter: utter_what_can_you_do
+      - user: "ok can you check my heating"
+      - utter: utter_checking_heating
+      - utter: utter_heating_on
+      - user: "thanks"
+      - utter: utter_free_chitchat_response
+      - user: "bye"
+      - utter: utter_goodbye
+
+  - test_case: user gets help then says ok
+    steps:
+      - user: "my house is cold"
+      - utter: utter_checking_heating
+      - utter: utter_heating_on
+      - user: "ok"
+      - utter: utter_free_chitchat_response
+
+  - test_case: user asks about capabilities then checks heating
+    steps:
+      - user: "hi"
+      - utter: utter_greeting
+      - user: "can you turn my heating up?"
+      - utter: utter_unsupported_action
+      - user: "can you at least check if it's working?"
+      - utter: utter_checking_heating
+      - utter: utter_heating_on
+
+  - test_case: quick heating check
+    steps:
+      - user: "check my thermostat"
+      - utter: utter_checking_heating
+      - utter: utter_heating_on
+      - user: "great"
+      - utter: utter_free_chitchat_response

@@ -1,0 +1,118 @@
+rasa:
+  settings:
+    enableApi: false
+    scheme: https
+    mountDefaultConfigmap: true
+    mountModelsVolume: false
+    credentials:
+      rest:
+      rasa:
+        url: "https://bot-lab-devrel-upskill-thermostat.demo.rasa.ai/api"
+      socketio:
+        bot_message_evt: bot_uttered
+        session_persistence: true
+        user_message_evt: user_uttered
+      audiocodes:
+        token: token
+    endpoints:
+      action_endpoint:
+        actions_module: "actions"
+      nlg:
+        type: rephraser.CustomContextualResponseRephraser
+        rephrase_all: true
+        summarize_history: false
+        prompt: prompt_templates/response-rephraser-template.jinja2
+        model_group: openai-gpt-4o
+      model_groups:
+        - id: openai-gpt-4o
+          models:
+            - provider: openai
+              model: gpt-4o-2024-11-20
+              request_timeout: 7
+              max_tokens: 256
+        - id: openai-embeddings
+          models:
+            - provider: openai
+              model: text-embedding-3-large
+      event_broker:
+        type: kafka
+        url: ${KAFKA_BROKER_ADDRESS}
+        security_protocol: SASL_PLAINTEXT
+        sasl_mechanism: ${KAFKA_SASL_MECHANISM}
+        sasl_username: ${KAFKA_SASL_USERNAME}
+        sasl_password: ${KAFKA_SASL_PASSWORD}
+        topic: ${KAFKA_TOPIC}
+        client_id: kafka-rasa-assistant
+        stream_pii: False
+  tolerations:
+    - key: pulumi-stack
+      value: lab-devrel-upskill-thermostat-dev
+      effect: NoSchedule
+      operator: Equal
+  nodeSelector:
+    eks.amazonaws.com/nodegroup: lab-devrel-upskill-thermostat-dev-nodegroup
+  command:
+    - rasa
+  args:
+    - inspect
+    - --cors
+    - '*'
+  additionalEnv:
+    - name: OPENAI_API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: "rasa-secrets"
+          key: openaiApiKey
+    - name: KAFKA_SASL_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: "kafka-secrets"
+          key: KAFKA_SASL_USERNAME
+    - name: KAFKA_SASL_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: "kafka-secrets"
+          key: KAFKA_SASL_PASSWORD
+    - name: KAFKA_SASL_MECHANISM
+      valueFrom:
+        secretKeyRef:
+          name: "kafka-secrets"
+          key: KAFKA_SASL_MECHANISM
+    - name: KAFKA_BROKER_ADDRESS
+      valueFrom:
+        secretKeyRef:
+          name: "kafka-secrets"
+          key: KAFKA_BROKER_ADDRESS
+    - name: KAFKA_TOPIC
+      valueFrom:
+        secretKeyRef:
+          name: "kafka-secrets"
+          key: KAFKA_TOPIC
+    - name: MAX_NUMBER_OF_PREDICTIONS
+      value: "1000"
+  ingress:
+    enabled: true
+    className: "alb"
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+      alb.ingress.kubernetes.io/backend-protocol: 'HTTP'
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:536697228103:certificate/982b7525-adb2-458c-85d8-89845f1606e0
+      external-dns.alpha.kubernetes.io/hostname: bot-lab-devrel-upskill-thermostat.demo.rasa.ai
+    hosts: [{"extraPaths": [], "host": "bot-lab-devrel-upskill-thermostat.demo.rasa.ai", "paths": [{"path": "/", "pathType": "Prefix"}]}]
+  image:
+    repository: 536697228103.dkr.ecr.us-east-1.amazonaws.com/lab-devrel-upskill-thermostat/dev
+    tag: "21712919728"
+rasaProServices:
+  enabled: false
+  tolerations:
+    - key: pulumi-stack
+      value: lab-devrel-upskill-thermostat-dev
+      effect: NoSchedule
+      operator: Equal
+  nodeSelector:
+    eks.amazonaws.com/nodegroup: lab-devrel-upskill-thermostat-dev-nodegroup
+actionServer:
+  enabled: false

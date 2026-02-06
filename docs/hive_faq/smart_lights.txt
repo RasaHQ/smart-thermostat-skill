@@ -1,0 +1,29 @@
+Q: What types of Hive smart bulbs are available?
+A: Hive offers bulbs in three versions - dimmable (warm white only), cool-to-warm (adjustable white temperature), and colour changing (full RGB). They're available as standard bulbs (E27/B22), candle lights (E14), and spotlights (GU10).
+
+Q: How do I set up Hive smart light bulbs?
+A: Replace your existing bulb with the Hive bulb, then open the Hive app. The bulb should flash on and off to show it's in pairing mode and searching for your hub. Follow the app instructions to complete setup.
+
+Q: Do Hive smart bulbs work with normal light switches?
+A: Yes, but the wall switch must stay on for the bulb to be controllable via the app. If someone turns off the wall switch, the bulb loses power and can't be controlled remotely.
+
+Q: Can I change the colour of Hive smart lights?
+A: Only the colour-changing bulbs can display the full RGB spectrum. Tuneable white bulbs let you adjust from warm to cool white, while dimmable bulbs only offer warm white at different brightness levels.
+
+Q: How do I group lights together?
+A: In the app, tap the menu icon, then Groups. Enter a name for your group (keep it simple for voice control), select the bulbs you want to include, and tap Save. You can then control all grouped lights with one tap.
+
+Q: Can I mix Hive and Philips Hue bulbs in a group?
+A: Yes, the Hive app works with Philips Hue bulbs too. You can create groups containing a mix of both brands.
+
+Q: My smart bulb is flickering, what's wrong?
+A: This usually means the bulb is connected to an incompatible dimmer switch. Hive smart bulbs have built-in dimming, so they should be connected to a standard on/off switch, not a dimmer.
+
+Q: What is Mimic mode?
+A: Mimic mode turns your lights on and off in a random pattern, making it look like someone is home when you're away. It's a security feature you can enable in the app.
+
+Q: Can I control Hive lights with voice assistants?
+A: Yes, Hive lights work with Amazon Alexa, Google Assistant, Apple HomeKit, and Siri Shortcuts. You can say things like "Alexa, turn on living room light" or "Alexa, change bedroom light to blue".
+
+Q: How do I adjust brightness?
+A: Open the bulb in the app and use the dimmer slider to set brightness from 0 to 100%. For colour bulbs, you can also use the tone slider to adjust colour temperature or pick a specific colour.
