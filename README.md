@@ -2,6 +2,8 @@
 
 A demo Rasa bot that shows how to build a better smart home assistant. Built as part of the "I Notice You Seem Unhappy" video series.
 
+[![Launch on Hello Rasa](https://pr492.hello.rasa-dev.io/launch.svg)](https://pr492.hello.rasa-dev.io/go?repo=rasahq/demo-assistant-init)
+
 ## What This Demo Shows
 
 This bot demonstrates solutions to common AI assistant problems:
