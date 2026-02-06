@@ -1,6 +1,0 @@
-cluster: rasa-platform-demo-cluster-prod
-namespace: lab-devrel-upskill-thermostat-dev
-name: rasa-pro
-repo: europe-west3-docker.pkg.dev/rasa-releases/helm-charts
-chart: rasa
-version: 2.0.0
